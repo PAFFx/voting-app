@@ -1,10 +1,6 @@
 import { Component, Input } from '@angular/core'
-import {
-  MatDialog,
-  MatDialogModule,
-  MatDialogTitle,
-} from '@angular/material/dialog'
 
+import { NgbModal, NgbModalOptions } from '@ng-bootstrap/ng-bootstrap'
 import { VoteModal } from '../vote-modal/vote-modal.component'
 
 @Component({
@@ -12,22 +8,17 @@ import { VoteModal } from '../vote-modal/vote-modal.component'
   standalone: true,
   templateUrl: './topic-list-item.html',
   styleUrls: ['./topic-list-item.scss'],
-  imports: [MatDialogModule, MatDialogTitle],
 })
 export class TopicListItem {
   @Input() public topicName: string = ''
   @Input() public idx: number = 0
   //
-  constructor(public dialog: MatDialog) { }
+  constructor(public voteModal: NgbModal) { }
   //
-  openVoteModal(
-    enterAnimationDuration: string,
-    exitAnimationDuration: string
-  ) {
-    this.dialog.open(VoteModal, {
-      width: '500px',
-      enterAnimationDuration,
-      exitAnimationDuration,
-    })
+  openVoteModal() {
+    const options: NgbModalOptions = {
+      animation: false,
+    }
+    this.voteModal.open(VoteModal, options)
   }
 }

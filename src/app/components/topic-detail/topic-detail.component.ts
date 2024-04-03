@@ -1,9 +1,5 @@
 import { Component } from '@angular/core'
-import {
-  MatDialogModule,
-  MatDialog,
-  MatDialogRef,
-} from '@angular/material/dialog'
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap'
 
 @Component({
   selector: 'topic-detail',
@@ -12,9 +8,9 @@ import {
   styleUrls: ['./topic-detail.component.scss'],
 })
 export class TopicDetail {
-  constructor(public modalRef: MatDialogRef<TopicDetail>) { }
+  constructor(public topicDetailModal: NgbActiveModal) { }
 
   closeModal() {
-    this.modalRef.close()
+    this.topicDetailModal.close()
   }
 }
