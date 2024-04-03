@@ -13,6 +13,12 @@
         </button>
       </div>
       <span style="display: inline; margin-top: 5px"># Voter 20</span>
+
+      <ul class="ul-nobullets">
+        <li *ngFor="let option of options; let idx = index" A>
+          <report-list-item [optionName]="option.optionName" />
+        </li>
+      </ul>
     </div>
   </div>
 </div>

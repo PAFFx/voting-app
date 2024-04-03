@@ -1,4 +1,4 @@
-.vote-option-container {
+.report-option-container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -8,7 +8,11 @@
     margin-bottom: 1px;
 
     padding: 5px;
-    padding-left: 30px;
+    padding-left: 10px;
 
     outline: black solid 1px;
+}
+
+.mb-3 {
+    width: 70%;
 }

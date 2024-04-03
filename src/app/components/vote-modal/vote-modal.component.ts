@@ -22,7 +22,14 @@ export class VoteModal {
     public modal: NgbModal
   ) { }
 
-  options: string[] = ['Option1', 'Option2', 'Option3', 'Option4', 'Option5']
+  options: string[] = [
+    'Option1',
+    'Option2',
+    'Option3',
+    'Option4',
+    'Option5',
+    'Option6',
+  ]
 
   submitAndCloseModal() {
     this.activeModal.close()
