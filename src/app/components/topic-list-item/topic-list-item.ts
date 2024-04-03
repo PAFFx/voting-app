@@ -19,13 +19,13 @@ export class TopicListItem {
     const options: NgbModalOptions = {
       animation: false,
     }
-    this.voteModal.open(VoteModal, options)
+    this.modal.open(VoteModal, options)
   }
 
   openReportModal() {
     const options: NgbModalOptions = {
       animation: false,
     }
-    this.reportModel.open(VoteModal, options)
+    this.modal.open(VoteModal, options)
   }
 }
