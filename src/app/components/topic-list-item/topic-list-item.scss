@@ -1,0 +1,36 @@
+.vote-topic-container {
+    display: flex;
+    flex-direction: row;
+    width: 800px;
+    height: 60px;
+    margin: 5px;
+}
+
+.topic-name-container {
+    display: flex;
+    flex-direction: row;
+    width: 65%;
+    height: 100%;
+    padding-left: 20px;
+    justify-items: first baseline;
+    align-items: center;
+
+    outline: 1px solid #000;
+}
+
+.topic-name {
+    // margin: auto;
+    font-size: 25px;
+}
+
+.button-container {
+    display: flex;
+    display: flex;
+    width: 17.5%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+
+    background-color: lightblue;
+    outline: 1px solid blue;
+}

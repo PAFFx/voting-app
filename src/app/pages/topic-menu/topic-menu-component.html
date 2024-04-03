@@ -1,0 +1,10 @@
+<div>
+  <div>
+    <nav-bar />
+  </div>
+  <ul>
+    <li *ngFor="let item of items; let idx = index;">
+      <topic-list-item [topicName]="item" [idx]="idx+1" />
+    </li>
+  </ul>
+</div>

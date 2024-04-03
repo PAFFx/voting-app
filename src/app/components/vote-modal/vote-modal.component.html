@@ -1,0 +1,17 @@
+<div class="screen">
+  <div class="center">
+    <div class="modal">
+      <span class="header-text">Submit Vote</span>
+      <div class="topic-container">
+        <span>Vote topic</span>
+        <span>Description(logo)</span>
+      </div>
+
+      <ol>
+        <li *ngFor="let option of options; let idx = index">
+          <vote-option-item [optionName]="option"></vote-option-item>
+        </li>
+      </ol>
+    </div>
+  </div>
+</div>

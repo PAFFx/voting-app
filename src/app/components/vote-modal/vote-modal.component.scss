@@ -1,0 +1,45 @@
+.screen {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    margin: auto;
+}
+
+.center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 40vh;
+    height: 40vh;
+
+    outline: 1px solid black;
+}
+.modal {
+    display: flex;
+    flex-direction: column;
+    background-color: blue;
+    padding-top: 20px;
+    padding-left: 10px;
+}
+
+.header-text {
+    display: inline;
+    font-weight: bold;
+}
+
+.topic-container {
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+    align-items: center;
+}
+
+.options-container {
+    display: flex;
+}
