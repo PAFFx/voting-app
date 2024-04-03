@@ -4,7 +4,9 @@
       <span class="header-text">Submit Vote</span>
       <div class="topic-container">
         <span>Vote topic</span>
-        <span>Description(logo)</span>
+        <button type="button" (click)="openDetailModal('0ms', '0ms')">
+          Description
+        </button>
       </div>
 
       <ul class="no-bullets">
@@ -14,7 +16,7 @@
       </ul>
 
       <div class="btn-container">
-        <button type="button" class="submit-btn" (click)="closeModal()">
+        <button type="submit" class="submit-btn" (click)="closeModal()">
           submit
         </button>
       </div>
