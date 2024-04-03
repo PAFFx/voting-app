@@ -7,11 +7,11 @@
         <span>Description(logo)</span>
       </div>
 
-      <ol>
+      <ul class="no-bullets">
         <li *ngFor="let option of options; let idx = index">
           <vote-option-item [optionName]="option"></vote-option-item>
         </li>
-      </ol>
+      </ul>
     </div>
   </div>
 </div>
