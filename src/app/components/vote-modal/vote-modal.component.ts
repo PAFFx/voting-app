@@ -18,20 +18,20 @@ import { TopicDetail } from '../topic-detail/topic-detail.component'
 })
 export class VoteModal {
   constructor(
-    public voteModalService: NgbActiveModal,
-    public topicModalService: NgbModal
+    public activeModal: NgbActiveModal,
+    public modal: NgbModal
   ) { }
 
   options: string[] = ['Option1', 'Option2', 'Option3', 'Option4', 'Option5']
 
-  closeModal() {
-    this.voteModalService.close()
+  submitAndCloseModal() {
+    this.activeModal.close()
   }
 
   openDetailModal() {
     const options: NgbModalOptions = {
       animation: false,
     }
-    this.topicModalService.open(TopicDetail, options)
+    this.modal.open(TopicDetail, options)
   }
 }

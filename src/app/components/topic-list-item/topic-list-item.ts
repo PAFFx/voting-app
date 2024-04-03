@@ -13,12 +13,19 @@ export class TopicListItem {
   @Input() public topicName: string = ''
   @Input() public idx: number = 0
   //
-  constructor(public voteModal: NgbModal) { }
+  constructor(public modal: NgbModal) { }
   //
   openVoteModal() {
     const options: NgbModalOptions = {
       animation: false,
     }
     this.voteModal.open(VoteModal, options)
+  }
+
+  openReportModal() {
+    const options: NgbModalOptions = {
+      animation: false,
+    }
+    this.reportModel.open(VoteModal, options)
   }
 }

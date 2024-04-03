@@ -8,9 +8,9 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap'
   styleUrls: ['./topic-detail.component.scss'],
 })
 export class TopicDetail {
-  constructor(public topicDetailModal: NgbActiveModal) { }
+  constructor(public activeModal: NgbActiveModal) { }
 
   closeModal() {
-    this.topicDetailModal.close()
+    this.activeModal.close()
   }
 }

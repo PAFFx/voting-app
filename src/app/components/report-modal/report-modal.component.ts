@@ -1,4 +1,7 @@
 import { Component } from '@angular/core'
+import { NgbModal, NgbModalOptions } from '@ng-bootstrap/ng-bootstrap'
+
+import { TopicDetail } from '../topic-detail/topic-detail.component'
 
 @Component({
   selector: 'report-modal',
