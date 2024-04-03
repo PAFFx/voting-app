@@ -1,8 +1,17 @@
 <div class="screen">
   <div class="center">
     <div class="modal">
-      <span style="display: inline; font-weight: bold">Vote Report</span>
-      <span style="display: inline; margin-top: 20px">Vote Topic1 </span>
+      <div style="display: flex; justify-content: space-between">
+        <span style="display: inline; font-weight: bold">Vote Report</span>
+        <button type="button" (click)="closeReportModal()">X</button>
+      </div>
+
+      <div style="display: flex; justify-content: space-between">
+        <span style="display: inline; margin-top: 20px">Vote Topic1</span>
+        <button type="button" (click)="openDetailModal()">
+          Description
+        </button>
+      </div>
       <span style="display: inline; margin-top: 5px"># Voter 20</span>
     </div>
   </div>
