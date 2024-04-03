@@ -9,4 +9,4 @@ import { TopicDetail } from '../topic-detail/topic-detail.component'
   templateUrl: './report-modal.component.html',
   styleUrls: ['./report-modal.component.scss'],
 })
-export class reportModal { }
+export class ReportModal { }

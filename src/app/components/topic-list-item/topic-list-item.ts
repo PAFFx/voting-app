@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core'
 
 import { NgbModal, NgbModalOptions } from '@ng-bootstrap/ng-bootstrap'
 import { VoteModal } from '../vote-modal/vote-modal.component'
+import { ReportModal } from '../report-modal/report-modal.component'
 
 @Component({
   selector: 'topic-list-item',
@@ -26,6 +27,6 @@ export class TopicListItem {
     const options: NgbModalOptions = {
       animation: false,
     }
-    this.modal.open(VoteModal, options)
+    this.modal.open(ReportModal, options)
   }
 }
