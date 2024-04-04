@@ -1,25 +1,34 @@
 <div class="screen">
-  <div class="center">
-    <div class="modal">
-      <span class="header-text">Submit Vote</span>
-      <div class="topic-container">
-        <span>Vote topic</span>
-        <button type="button" (click)="openDetailModal()">
-          Description
-        </button>
-      </div>
+    <div class="center">
+        <div class="modal">
+            <span class="header-text">Submit Vote</span>
+            <div class="topic-container">
+                <span>Vote topic</span>
+                <button type="button" (click)="openDetailModal()">
+                    Description
+                </button>
+            </div>
 
-      <ul class="no-bullets">
-        <li *ngFor="let option of options; let idx = index">
-          <vote-option-item [optionName]="option"></vote-option-item>
-        </li>
-      </ul>
+            <ul class="no-bullets">
+                <li *ngFor="let option of options; let idx = index">
+                    <vote-option-item
+                        [optionName]="option"
+                        [isActive]="idx === activeIndex"
+                        (click)="setActiveIndex(idx)"
+                    ></vote-option-item>
+                </li>
+            </ul>
 
-      <div class="btn-container">
-        <button type="submit" class="submit-btn" (click)="submitAndCloseModal()">
-          submit
-        </button>
-      </div>
+            <div class="btn-container">
+                <button
+                    type="submit"
+                    class="submit-btn"
+                    (click)="submitAndCloseModal()"
+                    [disabled]="activeIndex == -1"
+                >
+                    submit
+                </button>
+            </div>
+        </div>
     </div>
-  </div>
 </div>

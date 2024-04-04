@@ -17,10 +17,7 @@ import { TopicDetail } from '../topic-detail/topic-detail.component'
   imports: [CommonModule, VoteOptionItem, TopicDetail],
 })
 export class VoteModal {
-  constructor(
-    public activeModal: NgbActiveModal,
-    public modal: NgbModal
-  ) { }
+  constructor(public activeModal: NgbActiveModal, public modal: NgbModal) { }
 
   options: string[] = [
     'Option1',
@@ -31,8 +28,19 @@ export class VoteModal {
     'Option6',
   ]
 
+  activeIndex: number = -1
+
+  setActiveIndex(index: number) {
+    if (this.activeIndex == index) {
+      this.activeIndex = -1
+    } else {
+      this.activeIndex = index
+    }
+  }
+
   submitAndCloseModal() {
     this.activeModal.close()
+    console.log(this.activeIndex)
   }
 
   openDetailModal() {
