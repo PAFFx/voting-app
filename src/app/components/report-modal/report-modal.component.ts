@@ -17,34 +17,36 @@ import { ReportListItem } from '../report-list-item/report-list-item.component'
   styleUrls: ['./report-modal.component.scss'],
 })
 export class ReportModal {
-  constructor(
-    public modal: NgbModal,
-    public activeModal: NgbActiveModal
-  ) { }
+  constructor(public modal: NgbModal, public activeModal: NgbActiveModal) { }
 
   options = [
     {
       optionName: 'option1',
       optionVote: 2,
-      topicTotalVote: 10,
+      totalVote: 10,
     },
     {
       optionName: 'option2',
       optionVote: 1,
-      topicTotalVote: 10,
+      totalVote: 10,
     },
     {
       optionName: 'option3',
       optionVote: 3,
-      topicTotalVote: 10,
+      totalVote: 10,
     },
     {
       optionName: 'option4',
       optionVote: 4,
-      topicTotalVote: 10,
+      totalVote: 10,
     },
   ]
 
+  getTotalVoter() {
+    if (this.options.length > 0) {
+      return this.options[0].totalVote
+    } else return 0
+  }
   closeReportModal() {
     this.activeModal.dismiss()
   }
