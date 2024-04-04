@@ -21,10 +21,6 @@ export class CreateVote {
   optionsCount: number = 1
   optionForms = new FormArray([new FormControl('', Validators.required)])
 
-  constructor() {
-    console.log('hello')
-  }
-
   createVoteGroup = new FormGroup({
     topicName: new FormControl('', [
       Validators.required,
