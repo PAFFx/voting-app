@@ -6,7 +6,11 @@
             <div>
                 <div class="space-between-row">
                     <label for="form-label" class="form-label">Topic</label>
-                    <label for="form-label" class="form-label">0/100</label>
+                    <label for="form-label" class="form-label"
+                        >{{
+                            createVoteGroup.get('topicName')!.value!.length
+                        }}/100</label
+                    >
                 </div>
                 <input
                     type="text"
@@ -20,7 +24,10 @@
                     <label for="form-label" class="form-label"
                         >Description</label
                     >
-                    <label for="form-label" class="form-label">0/1,000</label>
+                    <label for="form-label" class="form-label">
+                        {{ createVoteGroup.get('description')!.value!.length }}
+                        /1,000</label
+                    >
                 </div>
                 <textarea
                     type="text"
