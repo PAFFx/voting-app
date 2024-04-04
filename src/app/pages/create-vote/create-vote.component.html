@@ -22,11 +22,16 @@
 
     <div>
       <label for="form-label" class="form-label">Options</label>
-      <input type="text" class="form-control" id="topic-form" />
+
+      <ul>
+        <li *ngFor="let option of optionForms" class="no-bullets">
+          <input type="text" class="form-control" id="topic-form" />
+        </li>
+      </ul>
     </div>
 
     <div style="width: 100%; justify-content: start; margin-top: 10px">
-      <button class="submit-btn" type="submit">submit</button>
+      <i class="bi bi-plus-circle add-option" (click)="addOption()"></i>
     </div>
   </div>
 </body>
