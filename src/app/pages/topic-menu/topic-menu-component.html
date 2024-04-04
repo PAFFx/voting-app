@@ -1,7 +1,5 @@
 <div>
-  <div>
-    <nav-bar />
-  </div>
+  <nav-bar></nav-bar>
   <ul class="ul-nobullets">
     <li *ngFor="let item of items; let idx = index;">
       <topic-list-item [topicName]="item" [idx]="idx+1" />

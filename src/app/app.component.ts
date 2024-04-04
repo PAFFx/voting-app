@@ -1,12 +1,13 @@
 import { Component } from '@angular/core'
-import { RouterOutlet } from '@angular/router'
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router'
 
 import { TopicMenu } from './pages/topic-menu/topic-menu.component'
+import { NavBar } from './components/nav-bar/nav-bar.component'
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, TopicMenu],
+  imports: [RouterOutlet, RouterLink, RouterLinkActive, NavBar],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
