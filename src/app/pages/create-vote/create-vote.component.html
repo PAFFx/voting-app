@@ -1,41 +1,70 @@
-<header>
-  <nav-bar />
-</header>
+<nav-bar></nav-bar>
 
 <body>
-  <div class="frame">
-    <div>
-      <div class="space-between-row">
-        <label for="form-label" class="form-label">Topic</label>
-        <label for="form-label" class="form-label">0/100</label>
-      </div>
-      <input type="text" class="form-control" id="topic-form" />
-    </div>
+    <div class="frame">
+        <form [formGroup]="createVoteGroup" (submit)="onSubmit()">
+            <div>
+                <div class="space-between-row">
+                    <label for="form-label" class="form-label">Topic</label>
+                    <label for="form-label" class="form-label">0/100</label>
+                </div>
+                <input
+                    type="text"
+                    class="form-control"
+                    formControlName="topicName"
+                />
+            </div>
 
-    <div>
-      <div class="space-between-row">
-        <label for="form-label" class="form-label">Description</label>
-        <label for="form-label" class="form-label">0/1,000</label>
-      </div>
-      <textarea type="text" class="form-control wide" id="topic-form"></textarea>
-    </div>
+            <div>
+                <div class="space-between-row">
+                    <label for="form-label" class="form-label"
+                        >Description</label
+                    >
+                    <label for="form-label" class="form-label">0/1,000</label>
+                </div>
+                <textarea
+                    type="text"
+                    class="form-control wide"
+                    formControlName="description"
+                ></textarea>
+            </div>
 
-    <div>
-      <label for="form-label" class="form-label">Options</label>
+            <div>
+                <label for="form-label" class="form-label">Options</label>
 
-      <ul>
-        <li *ngFor="let option of optionForms" class="no-bullets">
-          <input type="text" class="form-control" id="topic-form" />
-        </li>
-      </ul>
-    </div>
+                <ul>
+                    <li
+                        *ngFor="
+                            let option of optionForms.controls;
+                            let i = index
+                        "
+                        class="no-bullets"
+                    >
+                        <input
+                            type="text"
+                            class="form-control"
+                            [formControl]="option"
+                        />
+                    </li>
+                </ul>
+            </div>
 
-    <div style="width: 100%; justify-content: start; margin-top: 10px">
-      <i class="bi bi-plus-circle add-option" (click)="addOption()"></i>
-    </div>
+            <div style="width: 100%; justify-content: start; margin-top: 10px">
+                <i
+                    class="bi bi-plus-circle add-option"
+                    (click)="addOption()"
+                ></i>
+            </div>
 
-    <div style="display: flex; width: 100%; justify-content: center">
-      <button type="submit" class="submit-btn">Submit</button>
+            <div style="display: flex; width: 100%; justify-content: center">
+                <button
+                    type="submit"
+                    class="submit-btn"
+                    [disabled]="!createVoteGroup.valid"
+                >
+                    Submit
+                </button>
+            </div>
+        </form>
     </div>
-  </div>
 </body>

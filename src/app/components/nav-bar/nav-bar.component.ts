@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core'
+import { Component } from '@angular/core'
 import { MatMenuModule } from '@angular/material/menu'
 import { MatToolbarModule } from '@angular/material/toolbar'
 
@@ -11,6 +11,4 @@ import { RouterLink, RouterLinkActive } from '@angular/router'
   styleUrls: ['./nav-bar.component.scss'],
   imports: [MatMenuModule, MatToolbarModule, RouterLink, RouterLinkActive],
 })
-export class NavBar {
-  @Input() page: string = 'home'
-}
+export class NavBar { }
