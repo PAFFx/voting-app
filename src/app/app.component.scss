@@ -1,15 +1,9 @@
-$text-color: #FFCC00;
+$text-color: #ffcc00;
 $bg-color: lightblue;
 
-
-body {
-  background-color: $bg-color;
-  h1 {
-    color: white;
-    text-align: center;
-    p {
-      font-family: verdana;
-      font-size: 20px;
-    }
-  }
+.main-body {
+    width: 100%;
+    height: 100%;
+    align-content: center;
+    align-items: center;
 }
