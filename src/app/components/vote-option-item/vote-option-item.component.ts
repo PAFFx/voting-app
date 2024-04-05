@@ -8,4 +8,5 @@ import { Component, Input } from '@angular/core'
 })
 export class VoteOptionItem {
   @Input() optionName: string = ''
+  @Input() isActive: boolean = false
 }

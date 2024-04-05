@@ -1,4 +1,4 @@
-import { Component } from '@angular/core'
+import { Component, Input, OnInit } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import {
   NgbModal,
@@ -8,6 +8,7 @@ import {
 
 import { TopicDetail } from '../topic-detail/topic-detail.component'
 import { ReportListItem } from '../report-list-item/report-list-item.component'
+import { Topic } from '../../interfaces/topic.interface'
 
 @Component({
   selector: 'report-modal',
@@ -16,34 +17,20 @@ import { ReportListItem } from '../report-list-item/report-list-item.component'
   imports: [ReportListItem, CommonModule],
   styleUrls: ['./report-modal.component.scss'],
 })
-export class ReportModal {
+export class ReportModal implements OnInit {
+  @Input() topic!: Topic
+  totalVote: number = 0
+
   constructor(
     public modal: NgbModal,
     public activeModal: NgbActiveModal
   ) { }
 
-  options = [
-    {
-      optionName: 'option1',
-      optionVote: 2,
-      topicTotalVote: 10,
-    },
-    {
-      optionName: 'option2',
-      optionVote: 1,
-      topicTotalVote: 10,
-    },
-    {
-      optionName: 'option3',
-      optionVote: 3,
-      topicTotalVote: 10,
-    },
-    {
-      optionName: 'option4',
-      optionVote: 4,
-      topicTotalVote: 10,
-    },
-  ]
+  ngOnInit(): void {
+    this.topic.options.forEach((o) => {
+      this.totalVote += o.voteCount!
+    })
+  }
 
   closeReportModal() {
     this.activeModal.dismiss()
@@ -53,6 +40,7 @@ export class ReportModal {
     const options: NgbModalOptions = {
       animation: false,
     }
-    this.modal.open(TopicDetail, options)
+    const modalRef = this.modal.open(TopicDetail, options)
+    modalRef.componentInstance.description = this.topic.description
   }
 }

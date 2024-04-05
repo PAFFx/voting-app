@@ -1,4 +1,4 @@
-import { Component } from '@angular/core'
+import { Component, Input } from '@angular/core'
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap'
 
 @Component({
@@ -8,6 +8,8 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap'
   styleUrls: ['./topic-detail.component.scss'],
 })
 export class TopicDetail {
+  @Input() description: string = ''
+
   constructor(public activeModal: NgbActiveModal) { }
 
   closeModal() {

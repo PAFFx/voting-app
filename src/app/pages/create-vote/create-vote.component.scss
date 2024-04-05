@@ -13,7 +13,9 @@
 }
 
 .form-control {
+    // display: inline;
     outline: grey solid 1px;
+    margin-bottom: 5px;
 }
 
 .form-control.wide {
@@ -21,4 +23,21 @@
 }
 
 .submit-btn {
+    width: 80px;
+    height: 50px;
+    border-radius: 10px;
+}
+
+i.add-option {
+    color: lightblue;
+}
+i:hover {
+    color: blue;
+}
+
+.no-bullets {
+    list-style-type: none;
+    padding: 0;
+    margin-left: -34px;
+    margin-top: 5px;
 }

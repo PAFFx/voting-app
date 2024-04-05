@@ -9,5 +9,12 @@ import { NgbProgressbarModule } from '@ng-bootstrap/ng-bootstrap'
   styleUrls: ['./report-list-item.component.scss'],
 })
 export class ReportListItem {
-  @Input() optionName: string = ''
+  @Input() optionName!: string
+  @Input() optionVote!: number
+  @Input() totalVote!: number
+
+  getPercentage(): number {
+    console.log(this.totalVote)
+    return (this.optionVote / this.totalVote) * 100
+  }
 }

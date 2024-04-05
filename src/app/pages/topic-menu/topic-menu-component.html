@@ -1,8 +1,8 @@
 <div>
-  <nav-bar></nav-bar>
-  <ul class="ul-nobullets">
-    <li *ngFor="let item of items; let idx = index;">
-      <topic-list-item [topicName]="item" [idx]="idx+1" />
-    </li>
-  </ul>
+    <nav-bar></nav-bar>
+    <ul class="ul-nobullets">
+        <li *ngFor="let topic of topics; let idx = index;">
+            <topic-list-item [topic]="topic" [idx]="idx+1" />
+        </li>
+    </ul>
 </div>
