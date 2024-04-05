@@ -24,8 +24,8 @@ export class TopicMenu implements OnInit {
   }
 
   ngOnInit() {
-    this.topicService.getTopics().subscribe((topic) => {
-      this.topics = topic
+    this.topicService.getTopics().subscribe((topics) => {
+      this.topics = topics
     })
   }
 }

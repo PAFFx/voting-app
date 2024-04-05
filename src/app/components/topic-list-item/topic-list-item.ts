@@ -30,5 +30,6 @@ export class TopicListItem {
       animation: false,
     }
     const modalRef = this.modal.open(ReportModal, options)
+    modalRef.componentInstance.topic = this.topic
   }
 }
