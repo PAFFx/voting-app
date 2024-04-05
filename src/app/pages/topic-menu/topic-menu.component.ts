@@ -1,8 +1,11 @@
-import { Component } from '@angular/core'
+import { Component, OnInit } from '@angular/core'
 import { CommonModule } from '@angular/common'
 
 import { TopicListItem } from '../../components/topic-list-item/topic-list-item'
 import { NavBar } from '../../components/nav-bar/nav-bar.component'
+
+import { TopicsService } from '../../services/Topics.service'
+import { Topic } from '../../interfaces/topic.interface'
 
 @Component({
   selector: 'topic-menu',
@@ -11,6 +14,18 @@ import { NavBar } from '../../components/nav-bar/nav-bar.component'
   templateUrl: './topic-menu-component.html',
   styleUrls: ['./topic-menu.component.scss'],
 })
-export class TopicMenu {
-  items: string[] = ['topic1', 'topic2', 'topic3']
+export class TopicMenu implements OnInit {
+  topicService: TopicsService
+  topics: Topic[]
+
+  constructor(topicService: TopicsService) {
+    this.topicService = topicService
+    this.topics = []
+  }
+
+  ngOnInit() {
+    this.topicService.getTopics().subscribe((topic) => {
+      this.topics = topic
+    })
+  }
 }
