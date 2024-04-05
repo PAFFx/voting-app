@@ -9,6 +9,9 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms'
+import { TopicCreate } from '../../interfaces/topic.interface'
+import { Option } from '../../interfaces/option.interface'
+import { TopicsService } from '../../services/topics.service'
 
 @Component({
   selector: 'create-vote',
@@ -18,7 +21,10 @@ import {
   imports: [NavBar, CommonModule, ReactiveFormsModule],
 })
 export class CreateVote {
-  optionsCount: number = 1
+  topicsService!: TopicsService
+  constructor(topicService: TopicsService) {
+    this.topicsService = topicService
+  }
   optionForms = new FormArray([new FormControl('', Validators.required)])
 
   createVoteGroup = new FormGroup({
@@ -33,16 +39,26 @@ export class CreateVote {
   })
   addOption() {
     this.optionForms.push(new FormControl('', Validators.required))
-    this.optionsCount += 1
   }
 
   onSubmit() {
     if (this.createVoteGroup.valid) {
-      const formData = {
-        ...this.createVoteGroup.value,
-        options: this.optionForms.value,
+      this.optionForms.value
+      const options: Option[] = this.optionForms.value.map((name) => {
+        return {
+          optionName: name!,
+          voteCount: 0,
+        }
+      })
+      const formData: TopicCreate = {
+        topicName: this.createVoteGroup.value.topicName,
+        description: this.createVoteGroup.value.description,
+        options: options,
       }
       console.log(formData)
+      this.topicsService
+        .postTopic(formData)
+        .subscribe((result) => console.log(result))
     }
   }
 }

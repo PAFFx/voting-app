@@ -6,3 +6,9 @@ export interface Topic {
   description: string
   options: Option[]
 }
+
+export interface TopicCreate {
+  topicName: string | null | undefined
+  description: string | null | undefined
+  options: Option[] | undefined
+}

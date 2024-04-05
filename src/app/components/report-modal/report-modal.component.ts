@@ -28,7 +28,7 @@ export class ReportModal implements OnInit {
 
   ngOnInit(): void {
     this.topic.options.forEach((o) => {
-      this.totalVote += o.voteCount
+      this.totalVote += o.voteCount!
     })
   }
 

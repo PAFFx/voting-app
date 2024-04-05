@@ -4,7 +4,7 @@ import {
   HttpErrorResponse,
   HttpResponse,
 } from '@angular/common/http'
-import { Topic } from '../interfaces/topic.interface'
+import { Topic, TopicCreate } from '../interfaces/topic.interface'
 import { baseUrl } from '../app.config'
 import { Observable } from 'rxjs/internal/Observable'
 
@@ -18,5 +18,9 @@ export class TopicsService {
 
   getTopics(): Observable<Topic[]> {
     return this.http.get<Topic[]>(this.url)
+  }
+
+  postTopic(topic: TopicCreate) {
+    return this.http.post(this.url, topic)
   }
 }
