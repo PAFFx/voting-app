@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common'
 import { TopicListItem } from '../../components/topic-list-item/topic-list-item'
 import { NavBar } from '../../components/nav-bar/nav-bar.component'
 
-import { TopicsService } from '../../services/Topics.service'
+import { TopicsService } from '../../services/topics.service'
 import { Topic } from '../../interfaces/topic.interface'
 
 @Component({

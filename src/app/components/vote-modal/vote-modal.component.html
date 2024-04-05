@@ -3,29 +3,21 @@
         <div class="modal">
             <span class="header-text">Submit Vote</span>
             <div class="topic-container">
-                <span>Vote topic</span>
+                <span>{{ topic.topicName }}</span>
                 <button type="button" (click)="openDetailModal()">
                     Description
                 </button>
             </div>
 
             <ul class="no-bullets">
-                <li *ngFor="let option of options; let idx = index">
-                    <vote-option-item
-                        [optionName]="option"
-                        [isActive]="idx === activeIndex"
-                        (click)="setActiveIndex(idx)"
-                    ></vote-option-item>
+                <li *ngFor="let option of topic.options; let idx = index">
+                    <vote-option-item [optionName]="option.optionName" [isActive]="idx === activeIndex"
+                        (click)="setActiveIndex(idx)"></vote-option-item>
                 </li>
             </ul>
 
             <div class="btn-container">
-                <button
-                    type="submit"
-                    class="submit-btn"
-                    (click)="submitAndCloseModal()"
-                    [disabled]="activeIndex == -1"
-                >
+                <button type="submit" class="submit-btn" (click)="submitAndCloseModal()" [disabled]="activeIndex == -1">
                     submit
                 </button>
             </div>

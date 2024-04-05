@@ -17,7 +17,10 @@ import { ReportListItem } from '../report-list-item/report-list-item.component'
   styleUrls: ['./report-modal.component.scss'],
 })
 export class ReportModal {
-  constructor(public modal: NgbModal, public activeModal: NgbActiveModal) { }
+  constructor(
+    public modal: NgbModal,
+    public activeModal: NgbActiveModal
+  ) { }
 
   options = [
     {
